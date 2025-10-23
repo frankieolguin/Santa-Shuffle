@@ -63,18 +63,8 @@ const ShufflePage = () => {
                 />
               </div>
             </div>
-            
-            <div className="mt-6 flex items-center space-x-3">
-              <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 hover:shadow-lg active:scale-95">
-                Reveal Time/Day...
-              </button>
-              <input 
-                type="text" 
-                placeholder="" 
-                className="w-16 h-10 rounded bg-yellow-400 border border-yellow-300"
-              />
             </div>
-          </div>
+          
 
           {/* Column 2: Advanced Settings */}
           <div className="bg-green-900/30 backdrop-blur-sm rounded-lg p-6 border border-green-500/30">

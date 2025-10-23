@@ -1,14 +1,17 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import Snowfall from '../Components/Snowfall'
 import '../App.css'
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{
-      background: 'linear-gradient(180deg, #121E99 0%, #8FFFFF 100%)'
-    }}>
+    <div
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #121E99 0%, #8FFFFF 100%)' }}
+    >
+     { /* Snowfall count here */ }
+      <Snowfall count={90} />
 
-      <div className="text-center">
+      <div className="relative z-10 text-center">
         <h1 className="text-9xl pb-4 font-bold font-sans mb-4 text-white">Santa Shuffle</h1>
         <p className="text-4xl pb-4 mt-8 text-white">Gift exchanges made simple.</p>
 
@@ -24,9 +27,7 @@ const HomePage = () => {
             </button>
           </Link>
         </div>
-
       </div>
-
     </div>
   )
 }

@@ -1,0 +1,37 @@
+/* Snowfall layering */
+.snowflake {
+  position: absolute;
+  top: -5vh;                 /* start slightly above the top */
+  will-change: transform;
+  animation-name: sway;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform: translateX(0);
+}
+
+/* The inner element falls vertically; nested animations avoid transform conflicts */
+.snowflake .flake {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  color: rgba(255,255,255,var(--opacity, 0.9));
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.7),
+    0 0 12px rgba(255,255,255,0.4);
+}
+
+/* Horizontal sway */
+@keyframes sway {
+  0%   { transform: translateX(calc(var(--drift, 12px) * -1)); }
+  50%  { transform: translateX(calc(var(--drift, 12px))); }
+  100% { transform: translateX(calc(var(--drift, 12px) * -1)); }
+}
+
+/* Vertical fall */
+@keyframes fall {
+  0%   { transform: translateY(-10vh) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(360deg); }
+}
